@@ -18,25 +18,27 @@ dependencies {
 
 kotless {
     config {
-        bucket = "kotless-test  "
+        bucket = "kotless-test-xp-deployment-bucket"
 
         terraform {
             profile = "xpeppers-develop"
-            region = "us-east-1"
+            region = "eu-west-1"
         }
     }
 
     webapp {
         lambda {
             kotless {
-                //Define packages in which scan for routes should be performed
-                //By default, will be set to gradle module group
                 packages = setOf("kotless")
             }
         }
     }
 
     extensions {
+        terraform {
+            allowDestroy = true
+        }
+
         local {
             useAWSEmulation = true
         }

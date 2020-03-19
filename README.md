@@ -2,6 +2,7 @@
 
 ### Prerequisites
 - Docker
+- bucket created in the same configured region
 
 ### Start Locally
 ```
@@ -10,5 +11,10 @@
 
 ### Deploy
 ```
+./gradlew deploy
+```
 
+### Destroy
+```
+./gradlew destroy
 ```
