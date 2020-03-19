@@ -1,3 +1,4 @@
+import io.kotless.KotlessConfig.Optimization.MergeLambda.None
 import io.kotless.plugin.gradle.dsl.kotless
 
 plugins {
@@ -19,10 +20,14 @@ dependencies {
 kotless {
     config {
         bucket = "kotless-test-xp-deployment-bucket"
-
+        
         terraform {
             profile = "xpeppers-develop"
             region = "eu-west-1"
+        }
+
+        optimization {
+            mergeLambda = None
         }
     }
 
